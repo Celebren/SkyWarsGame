@@ -1,6 +1,7 @@
 package skyWars;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class TilesRow {
 	
@@ -26,7 +27,7 @@ public class TilesRow {
 			x = (rowId*4)-3;
 		}
 		
-		for (int i=0; i < 4; i++) {			
+		for (int i=0; i < TILES_IN_A_ROW; i++) {			
 			GameTile tile = new GameTile(i+(x));
 			this.rowOfTiles.add(tile);		
 		}
@@ -39,6 +40,7 @@ public class TilesRow {
 			tile.displayId();			
 		}
 	} // end displayTiles
+	 
 	
 	// getters & setters
 	public int getRowId() {
@@ -47,6 +49,14 @@ public class TilesRow {
 
 	public void setRowId(int rowId) {
 		this.rowId = rowId;
+	}
+
+	public ArrayList<GameTile> getRowOfTiles() {
+		return this.rowOfTiles;
+	}
+
+	public void setRowOfTiles(ArrayList<GameTile> rowOfTiles) {
+		this.rowOfTiles = rowOfTiles;
 	}
 	
 	
