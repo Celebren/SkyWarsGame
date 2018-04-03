@@ -2,6 +2,7 @@ package skyWars;
 
 public class GameTile {
 
+	// each tile has an id from 1 to 16
 	private int tileId;
 	
 	public GameTile(int tileId) {
