@@ -14,6 +14,11 @@ public class GameTile {
 	
 	private ArrayList<Integer> legalMoves;
 	
+	// Polymorphism: each Tile can hold 0, one or more ships
+	private Ship ship;
+	
+	public GameTile() {} // empty constructor for testing
+	
 	public GameTile(int tileId) {
 		setTileId(tileId);
 		legalMoves = new ArrayList<Integer>();
@@ -61,5 +66,13 @@ public class GameTile {
 
 	public void setMapOfMoves(HashMap<Integer, ArrayList<Integer>> mapOfMoves) {
 		this.mapOfMoves = mapOfMoves;
+	}
+
+	public Ship getShip() {
+		return this.ship;
+	}
+
+	public void setShip(Ship ship) {
+		this.ship = ship;
 	}
 }

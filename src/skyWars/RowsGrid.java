@@ -13,6 +13,8 @@ public class RowsGrid {
 	private HashMap<Integer, ArrayList<Integer>> hashMapEntry = new HashMap<Integer, ArrayList<Integer>>();
 	private	Integer key;
 	private ArrayList<Integer> value;
+	private ArrayList<GameTile> listOfTiles = new ArrayList<GameTile>();
+	private GameTile gameTile = new GameTile();
 
 	private final int ROWS_IN_GRID = 4;
 	private final int TILES_IN_A_ROW = 4;
@@ -39,18 +41,29 @@ public class RowsGrid {
 		for (int i = 0; i < ROWS_IN_GRID; i++) {			
 			for (int y = 0; y < TILES_IN_A_ROW; y++) {
 				// take each map entry for each tile for each row
-				hashMapEntry = getGridOfRows().get(i).getRowOfTiles().get(y).getMapOfMoves();
+				this.hashMapEntry = this.getGridOfRows().get(i).getRowOfTiles().get(y).getMapOfMoves();
 				// extract key and value
 				for (HashMap.Entry<Integer, ArrayList<Integer>> entry : hashMapEntry.entrySet()) {
-					key = entry.getKey();
-					value = entry.getValue();
+					this.key = entry.getKey();
+					this.value = entry.getValue();
 				}
 				// add key and value to new map
-				mapOfMoves.put(key, value); 				
+				this.mapOfMoves.put(key, value); 				
 			}
 		}		
-		return mapOfMoves;
+		return this.mapOfMoves;
 	}// end of get map of legal moves
+	
+	// get array of all tiles
+	public ArrayList<GameTile> getArrayListOfTiles() {
+		for (int i = 0; i < ROWS_IN_GRID; i++) {			
+			for (int y = 0; y < TILES_IN_A_ROW; y++) {
+				this.gameTile = this.getGridOfRows().get(i).getRowOfTiles().get(y);
+				this.listOfTiles.add(gameTile);
+			}
+		}
+		return this.listOfTiles;
+	}
 	
 	public ArrayList<TilesRow> getGridOfRows() {
 		return this.gridOfRows;

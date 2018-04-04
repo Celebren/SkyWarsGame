@@ -1,5 +1,9 @@
 package skyWars;
 
-public class BattleShooter extends EnemyShip {
+public class BattleShooter extends Ship {
 
+	public BattleShooter() {
+		setShipTypeId(4);
+	}
+	
 }

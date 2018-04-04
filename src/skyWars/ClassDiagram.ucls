@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="skyWars.masterSpaceShip" project="SD2_coursework" 
-    file="/SD2_coursework/src/skyWars/masterSpaceShip.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="skyWars.MasterSpaceShip" project="SD2_coursework" 
+    file="/SD2_coursework/src/skyWars/MasterSpaceShip.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="81" width="126" x="314" y="83"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="skyWars.EnemyShip" project="SD2_coursework" 
-    file="/SD2_coursework/src/skyWars/EnemyShip.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="skyWars.Ship" project="SD2_coursework" 
+    file="/SD2_coursework/src/skyWars/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="81" width="89" x="480" y="83"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -87,29 +87,37 @@
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <generalization id="11">    
-    <end type="SOURCE" refId="9"/>    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
   <association id="12">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="13" name="rowOfTiles"/>      
-      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
+      <attribute id="13" name="rowOfTiles">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="15">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="16">    
+  <association id="15">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="17" name="gridOfRows"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
+      <attribute id="16" name="gridOfRows">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <generalization id="18">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
