@@ -4,10 +4,10 @@ public abstract class Ship {
 	// Enemy Ships superclass for polymorphism
 	
 	/* Ships' id determines it's type: 
-	 * 1 - masterSpaceShip
-	 * 2 - BattleStar
-	 * 3 - BattleCruiser
-	 * 4 - BattleShooter
+	 * 0 - masterSpaceShip (Cobra)
+	 * 1 - BattleStar	(Fighter)
+	 * 2 - BattleCruiser (Corvette)
+	 * 3 - BattleShooter (Gunship)
 	 */
 	private int shipTypeId;
 

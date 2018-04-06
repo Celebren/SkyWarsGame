@@ -14,7 +14,9 @@ public class GameTile {
 	
 	private ArrayList<Integer> legalMoves;
 	
-	// Polymorphism: each Tile can hold 0, one or more ships
+	// this list will contain ships that exist on the tile
+	private ArrayList<Ship> listOfShipsOnTile = new ArrayList<Ship>();
+
 	private Ship ship;
 	
 	public GameTile() {} // empty constructor for testing
@@ -30,7 +32,7 @@ public class GameTile {
 	}
 
 	// create map of legal moves
-	private void createMapOfLegalMoves(int tileId) {		
+	private void createMapOfLegalMoves(int tileId) {
 		switch(tileId) {
 			case 1:  this.legalMoves.addAll(Arrays.asList(2,5,6)); this.mapOfMoves.put(tileId, legalMoves); break;
 			case 2:  this.legalMoves.addAll(Arrays.asList(1,3,5,6,7)); this.mapOfMoves.put(tileId, legalMoves); break;
@@ -74,5 +76,13 @@ public class GameTile {
 
 	public void setShip(Ship ship) {
 		this.ship = ship;
+	}
+
+	public ArrayList<Ship> getListOfShipsOnTile() {
+		return this.listOfShipsOnTile;
+	}
+
+	public void setListOfShipsOnTile(ArrayList<Ship> listOfShipsOnTile) {
+		this.listOfShipsOnTile = listOfShipsOnTile;
 	}
 }

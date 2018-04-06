@@ -1,122 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="skyWars.MasterSpaceShip" project="SD2_coursework" 
-    file="/SD2_coursework/src/skyWars/MasterSpaceShip.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="126" x="314" y="83"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="skyWars.GameTile" project="SD2_coursework" 
+  <class id="1" language="java" name="skyWars.GameTile" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/GameTile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="318" x="756" y="649"/>    
+    <position height="297" width="318" x="306" y="1139"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="skyWars.BattleCruiser" project="SD2_coursework" 
+  <class id="2" language="java" name="skyWars.BattleCruiser" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/BattleCruiser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="99" x="341" y="384"/>    
+    <position height="81" width="99" x="258" y="1651"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="skyWars.BattleStar" project="SD2_coursework" 
+  <class id="3" language="java" name="skyWars.BattleStar" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/BattleStar.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="480" y="384"/>    
+    <position height="81" width="87" x="397" y="1651"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="skyWars.Ship" project="SD2_coursework" 
-    file="/SD2_coursework/src/skyWars/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="89" x="480" y="83"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="skyWars.RowsGrid" project="SD2_coursework" 
+  <class id="4" language="java" name="skyWars.RowsGrid" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/RowsGrid.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="312" x="762" y="83"/>    
+    <position height="279" width="312" x="270" y="555"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="skyWars.TilesRow" project="SD2_coursework" 
+  <class id="5" language="java" name="skyWars.TilesRow" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/TilesRow.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="230" x="759" y="384"/>    
+    <position height="225" width="230" x="34" y="874"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="skyWars.demo" project="SD2_coursework" 
+  <class id="6" language="java" name="skyWars.demo" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/demo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="609" y="83"/>    
+    <position height="99" width="113" x="87" y="164"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="skyWars.BattleShooter" project="SD2_coursework" 
+  <class id="7" language="java" name="skyWars.GUI" project="SD2_coursework" file="/SD2_coursework/src/skyWars/GUI.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="239" x="293" y="164"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="skyWars.Ship" project="SD2_coursework" 
+    file="/SD2_coursework/src/skyWars/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="135" x="510" y="1476"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="skyWars.MasterSpaceShip" project="SD2_coursework" 
+    file="/SD2_coursework/src/skyWars/MasterSpaceShip.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="125" x="666" y="1651"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="skyWars.BattleShooter" project="SD2_coursework" 
     file="/SD2_coursework/src/skyWars/BattleShooter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="102" x="607" y="384"/>    
+    <position height="81" width="102" x="524" y="1651"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="10">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <generalization id="11">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
+  <class id="11" language="java" name="skyWars.ButtonsLogic" project="SD2_coursework" 
+    file="/SD2_coursework/src/skyWars/ButtonsLogic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="288" x="624" y="164"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <association id="12">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="13" name="rowOfTiles">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="14" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="13" name="gridOfRows"/>      
+      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="15">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="16" name="gridOfRows">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="17" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+    <bendpoint x="675" y="555"/>    
+    <bendpoint x="675" y="874"/>    
+    <bendpoint x="675" y="1139"/>    
+    <bendpoint x="675" y="1476"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="16" name="masterSpaceShip"/>      
+      <multiplicity id="17" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="18">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="19">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="20" name="rowOfTiles"/>      
+      <multiplicity id="21" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <bendpoint x="315" y="874"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="23" name="listOfTiles"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <bendpoint x="294" y="874"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="26" name="gameTile"/>      
+      <multiplicity id="27" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <bendpoint x="654" y="555"/>    
+    <bendpoint x="654" y="874"/>    
+    <bendpoint x="654" y="1139"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="29" name="ship"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <bendpoint x="633" y="555"/>    
+    <bendpoint x="633" y="874"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="32" name="listOfTiles"/>      
+      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="34">    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="5"/>  
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <association id="35">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="36" name="ship"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="39" name="sky"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

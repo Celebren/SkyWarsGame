@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import com.sun.media.sound.SimpleSoundbank;
-
 public class demo {
 	
 	// test rows and tiles creation
