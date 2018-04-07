@@ -17,7 +17,7 @@ public class GameTile {
 	// this list will contain ships that exist on the tile
 	private ArrayList<Ship> listOfShipsOnTile = new ArrayList<Ship>();
 
-	private Ship ship;
+	
 	
 	public GameTile() {} // empty constructor for testing
 	
@@ -53,6 +53,16 @@ public class GameTile {
 		}
 	}
 	
+	// add ships to list of ships on tile
+	public void addShipToList(Ship ship) {
+		this.listOfShipsOnTile.add(ship);
+	}
+	
+	// remove ships from list of ships on tile
+	public void removeShipFromList(Ship ship) {
+		this.listOfShipsOnTile.remove(ship);
+	}
+	
 	// getters & setters
 	public int getTileId() {
 		return this.tileId;
@@ -68,14 +78,6 @@ public class GameTile {
 
 	public void setMapOfMoves(HashMap<Integer, ArrayList<Integer>> mapOfMoves) {
 		this.mapOfMoves = mapOfMoves;
-	}
-
-	public Ship getShip() {
-		return this.ship;
-	}
-
-	public void setShip(Ship ship) {
-		this.ship = ship;
 	}
 
 	public ArrayList<Ship> getListOfShipsOnTile() {

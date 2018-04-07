@@ -3,6 +3,7 @@ package skyWars;
 public class BattleCruiser extends Ship {
 
 	public BattleCruiser() {
-		setShipTypeId(2);
+		setShipTypeId(3);
+		setShipName("Battle Cruiser");
 	}
 }
