@@ -766,11 +766,20 @@ public class GUI extends JFrame {
 	} // end clear tiles
 	
 	// method for drawing master ship
-	public void drawMasterShip(int tileNumber) {		
+	public void drawMasterShip(int tileNumber) {
+		/*
 		for (int i = 0; i < NUMBER_OF_TILES; i++) {
 			if (tileNumber-1 == i) {
 				listOfTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(masterShipIcon)));
 			}
+		}*/
+		
+		if (bl1.getMasterShipTile() != null) {
+			for (int i = 0; i < NUMBER_OF_TILES; i++) {
+				if (bl1.getMasterShipTile().getTileId()-1 == i) {
+					listOfTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(masterShipIcon)));
+					}					
+				}
 		}
 	} // end drawMasterShop()
 	
@@ -841,7 +850,9 @@ public class GUI extends JFrame {
 		
 		resetTiles();
 		
-		// reset master ship mode
+		for (GameTile t : bl1.getListOfTiles()) {
+			t.getListOfShipsOnTile().clear();
+		}
 		bl1.setMasterMode(0);
 		masterShipIcon = MASTER_SHIP_DEFENSIVE;
 		

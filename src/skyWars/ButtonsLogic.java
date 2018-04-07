@@ -26,7 +26,9 @@ public class ButtonsLogic {
 	private BattleStar battleStarShip = new BattleStar();
 	private BattleCruiser battleCruiserShip = new BattleCruiser();
 	private BattleShooter battleShooterShip = new BattleShooter();
+	
 	private ArrayList<GameTile> listOfTiles = sky.getArrayListOfTiles();
+	
 	private HashMap<Integer, ArrayList<Integer>> legalMovesMap = sky.getLegalMovesMap();
 	private ArrayList<Integer> movesListForMaster = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForStar = new ArrayList<Integer>();
@@ -301,6 +303,10 @@ public class ButtonsLogic {
 
 	public void setMasterMode(int masterMode) {
 		this.masterMode = masterMode;
+	}
+
+	public ArrayList<GameTile> getListOfTiles() {
+		return this.listOfTiles;
 	}
 	
 	

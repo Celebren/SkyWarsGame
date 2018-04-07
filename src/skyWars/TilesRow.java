@@ -14,8 +14,7 @@ public class TilesRow {
 	
 	// when constructing a tiles row add new tiles to it looping 
 	// the number of tiles in a row
-	public TilesRow (int rowId) {
-		
+	public TilesRow (int rowId) {		
 		setRowId(rowId);
 		
 		// if row id = 1, create tiles 1 to 4 (i + rowId)
