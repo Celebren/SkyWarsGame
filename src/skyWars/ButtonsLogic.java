@@ -11,10 +11,17 @@ public class ButtonsLogic {
 	private int masterShipSpawnTile;
 	private int enemyShipSpawnTile;
 	private int chanceOfEnemySpawn;
-	private int nextTile;
 	private int enemyType;
 	private int masterMode = 0; // 0 = defensive mode, 1 = offensive mode
 	private int destroyedShipId = 0;
+	
+	private int score = 0;
+	private int highScore;
+	
+	private final int SCORE_STAR = 25;
+	private final int SCORE_SHOOTER = 50;
+	private final int SCORE_CRUISER = 75;
+	
 	private Random randomNumbersGenerator = new Random();
 	private RowsGrid sky = new RowsGrid();
 	private GameTile masterShipTile;
@@ -34,8 +41,6 @@ public class ButtonsLogic {
 	private ArrayList<Integer> movesListForStar = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForCruiser = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForShooter = new ArrayList<Integer>();
-	private ArrayList<Integer> nextEnemyShipsMoves = new ArrayList<Integer>();
-	private ArrayList<Ship> listOfShipsOnTile = new ArrayList<Ship>();
 		
 	
 	public ButtonsLogic () {}
@@ -252,10 +257,11 @@ public class ButtonsLogic {
 					destroyedShipId = 1;
 				}
 			}
-		}
-		
+		}		
 		return destroyedShipId;
 	} // end conflicResolution()
+	
+	// calculateScore
 
 	public int getEnemyType() {
 		return this.enemyType;

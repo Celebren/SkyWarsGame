@@ -34,6 +34,7 @@ import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.Font;
 
 public class GUI extends JFrame {
 
@@ -146,7 +147,7 @@ public class GUI extends JFrame {
 		lblTile1.setVerticalAlignment(SwingConstants.TOP);
 		lblTile1.setForeground(Color.CYAN);
 		lblTile1.setBackground(Color.DARK_GRAY);
-		lblTile1.setBounds(35, 61, 100, 100);
+		lblTile1.setBounds(35, 100, 100, 100);
 		lblTile1.setBorder(border);
 		contentPane.add(lblTile1);
 		
@@ -154,7 +155,7 @@ public class GUI extends JFrame {
 		lblTile2.setVerticalAlignment(SwingConstants.TOP);
 		lblTile2.setForeground(Color.CYAN);
 		lblTile2.setBackground(Color.DARK_GRAY);
-		lblTile2.setBounds(134, 61, 100, 100);
+		lblTile2.setBounds(134, 100, 100, 100);
 		lblTile2.setBorder(border);
 		contentPane.add(lblTile2);
 		
@@ -162,7 +163,7 @@ public class GUI extends JFrame {
 		lblTile3.setVerticalAlignment(SwingConstants.TOP);
 		lblTile3.setForeground(Color.CYAN);
 		lblTile3.setBackground(Color.DARK_GRAY);
-		lblTile3.setBounds(234, 61, 100, 100);
+		lblTile3.setBounds(234, 100, 100, 100);
 		lblTile3.setBorder(border);
 		contentPane.add(lblTile3);
 		
@@ -170,7 +171,7 @@ public class GUI extends JFrame {
 		lblTile4.setVerticalAlignment(SwingConstants.TOP);
 		lblTile4.setForeground(Color.CYAN);
 		lblTile4.setBackground(Color.DARK_GRAY);
-		lblTile4.setBounds(333, 61, 100, 100);
+		lblTile4.setBounds(333, 100, 100, 100);
 		lblTile4.setBorder(border);
 		contentPane.add(lblTile4);
 		
@@ -178,7 +179,7 @@ public class GUI extends JFrame {
 		lblTile5.setVerticalAlignment(SwingConstants.TOP);
 		lblTile5.setForeground(Color.CYAN);
 		lblTile5.setBackground(Color.DARK_GRAY);
-		lblTile5.setBounds(35, 161, 100, 100);
+		lblTile5.setBounds(35, 200, 100, 100);
 		lblTile5.setBorder(border);
 		contentPane.add(lblTile5);
 		
@@ -186,7 +187,7 @@ public class GUI extends JFrame {
 		lblTile6.setVerticalAlignment(SwingConstants.TOP);
 		lblTile6.setForeground(Color.CYAN);
 		lblTile6.setBackground(Color.DARK_GRAY);
-		lblTile6.setBounds(134, 161, 100, 100);
+		lblTile6.setBounds(134, 200, 100, 100);
 		lblTile6.setBorder(border);
 		contentPane.add(lblTile6);
 		
@@ -194,7 +195,7 @@ public class GUI extends JFrame {
 		lblTile7.setVerticalAlignment(SwingConstants.TOP);
 		lblTile7.setForeground(Color.CYAN);
 		lblTile7.setBackground(Color.DARK_GRAY);
-		lblTile7.setBounds(234, 161, 100, 100);
+		lblTile7.setBounds(234, 200, 100, 100);
 		lblTile7.setBorder(border);
 		contentPane.add(lblTile7);
 		
@@ -202,7 +203,7 @@ public class GUI extends JFrame {
 		lblTile8.setVerticalAlignment(SwingConstants.TOP);
 		lblTile8.setForeground(Color.CYAN);
 		lblTile8.setBackground(Color.DARK_GRAY);
-		lblTile8.setBounds(333, 161, 100, 100);
+		lblTile8.setBounds(333, 200, 100, 100);
 		lblTile8.setBorder(border);
 		contentPane.add(lblTile8);
 		
@@ -210,7 +211,7 @@ public class GUI extends JFrame {
 		lblTile9.setVerticalAlignment(SwingConstants.TOP);
 		lblTile9.setForeground(Color.CYAN);
 		lblTile9.setBackground(Color.DARK_GRAY);
-		lblTile9.setBounds(35, 261, 100, 100);
+		lblTile9.setBounds(35, 300, 100, 100);
 		lblTile9.setBorder(border);
 		contentPane.add(lblTile9);
 		
@@ -218,7 +219,7 @@ public class GUI extends JFrame {
 		lblTile10.setVerticalAlignment(SwingConstants.TOP);
 		lblTile10.setForeground(Color.CYAN);
 		lblTile10.setBackground(Color.DARK_GRAY);
-		lblTile10.setBounds(134, 261, 100, 100);
+		lblTile10.setBounds(134, 300, 100, 100);
 		lblTile10.setBorder(border);
 		contentPane.add(lblTile10);
 		
@@ -226,7 +227,7 @@ public class GUI extends JFrame {
 		lblTile11.setVerticalAlignment(SwingConstants.TOP);
 		lblTile11.setForeground(Color.CYAN);
 		lblTile11.setBackground(Color.DARK_GRAY);
-		lblTile11.setBounds(234, 261, 100, 100);
+		lblTile11.setBounds(234, 300, 100, 100);
 		lblTile11.setBorder(border);
 		contentPane.add(lblTile11);
 		
@@ -234,7 +235,7 @@ public class GUI extends JFrame {
 		lblTile12.setVerticalAlignment(SwingConstants.TOP);
 		lblTile12.setForeground(Color.CYAN);
 		lblTile12.setBackground(Color.DARK_GRAY);
-		lblTile12.setBounds(333, 261, 100, 100);
+		lblTile12.setBounds(333, 300, 100, 100);
 		lblTile12.setBorder(border);
 		contentPane.add(lblTile12);
 		
@@ -242,7 +243,7 @@ public class GUI extends JFrame {
 		lblTile13.setVerticalAlignment(SwingConstants.TOP);
 		lblTile13.setForeground(Color.CYAN);
 		lblTile13.setBackground(Color.DARK_GRAY);
-		lblTile13.setBounds(35, 360, 100, 100);
+		lblTile13.setBounds(35, 399, 100, 100);
 		lblTile13.setBorder(border);
 		contentPane.add(lblTile13);
 		
@@ -250,7 +251,7 @@ public class GUI extends JFrame {
 		lblTile14.setVerticalAlignment(SwingConstants.TOP);
 		lblTile14.setForeground(Color.CYAN);
 		lblTile14.setBackground(Color.DARK_GRAY);
-		lblTile14.setBounds(134, 360, 100, 100);
+		lblTile14.setBounds(134, 399, 100, 100);
 		lblTile14.setBorder(border);
 		contentPane.add(lblTile14);
 		
@@ -258,7 +259,7 @@ public class GUI extends JFrame {
 		lblTile15.setVerticalAlignment(SwingConstants.TOP);
 		lblTile15.setForeground(Color.CYAN);
 		lblTile15.setBackground(Color.DARK_GRAY);
-		lblTile15.setBounds(234, 360, 100, 100);
+		lblTile15.setBounds(234, 399, 100, 100);
 		lblTile15.setBorder(border);
 		contentPane.add(lblTile15);
 		
@@ -266,7 +267,7 @@ public class GUI extends JFrame {
 		lblTile16.setVerticalAlignment(SwingConstants.TOP);
 		lblTile16.setForeground(Color.CYAN);
 		lblTile16.setBackground(Color.DARK_GRAY);
-		lblTile16.setBounds(333, 360, 100, 100);
+		lblTile16.setBounds(333, 399, 100, 100);
 		lblTile16.setBorder(border);
 		contentPane.add(lblTile16);
 		
@@ -274,7 +275,7 @@ public class GUI extends JFrame {
 		starlblTile1.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile1.setForeground(Color.CYAN);
 		starlblTile1.setBackground(Color.DARK_GRAY);
-		starlblTile1.setBounds(35, 61, 100, 100);
+		starlblTile1.setBounds(35, 100, 100, 100);
 		starlblTile1.setBorder(border);
 		contentPane.add(starlblTile1);
 		
@@ -282,7 +283,7 @@ public class GUI extends JFrame {
 		starlblTile2.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile2.setForeground(Color.CYAN);
 		starlblTile2.setBackground(Color.DARK_GRAY);
-		starlblTile2.setBounds(134, 61, 100, 100);
+		starlblTile2.setBounds(134, 100, 100, 100);
 		starlblTile2.setBorder(border);
 		contentPane.add(starlblTile2);
 		
@@ -290,7 +291,7 @@ public class GUI extends JFrame {
 		starlblTile3.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile3.setForeground(Color.CYAN);
 		starlblTile3.setBackground(Color.DARK_GRAY);
-		starlblTile3.setBounds(234, 61, 100, 100);
+		starlblTile3.setBounds(234, 100, 100, 100);
 		starlblTile3.setBorder(border);
 		contentPane.add(starlblTile3);
 		
@@ -298,7 +299,7 @@ public class GUI extends JFrame {
 		starlblTile4.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile4.setForeground(Color.CYAN);
 		starlblTile4.setBackground(Color.DARK_GRAY);
-		starlblTile4.setBounds(333, 61, 100, 100);
+		starlblTile4.setBounds(333, 100, 100, 100);
 		starlblTile4.setBorder(border);
 		contentPane.add(starlblTile4);
 		
@@ -306,7 +307,7 @@ public class GUI extends JFrame {
 		starlblTile5.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile5.setForeground(Color.CYAN);
 		starlblTile5.setBackground(Color.DARK_GRAY);
-		starlblTile5.setBounds(35, 161, 100, 100);
+		starlblTile5.setBounds(35, 200, 100, 100);
 		starlblTile5.setBorder(border);
 		contentPane.add(starlblTile5);
 		
@@ -314,7 +315,7 @@ public class GUI extends JFrame {
 		starlblTile6.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile6.setForeground(Color.CYAN);
 		starlblTile6.setBackground(Color.DARK_GRAY);
-		starlblTile6.setBounds(134, 161, 100, 100);
+		starlblTile6.setBounds(134, 200, 100, 100);
 		starlblTile6.setBorder(border);
 		contentPane.add(starlblTile6);
 		
@@ -322,7 +323,7 @@ public class GUI extends JFrame {
 		starlblTile7.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile7.setForeground(Color.CYAN);
 		starlblTile7.setBackground(Color.DARK_GRAY);
-		starlblTile7.setBounds(234, 161, 100, 100);
+		starlblTile7.setBounds(234, 200, 100, 100);
 		starlblTile7.setBorder(border);
 		contentPane.add(starlblTile7);
 		
@@ -330,7 +331,7 @@ public class GUI extends JFrame {
 		starlblTile8.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile8.setForeground(Color.CYAN);
 		starlblTile8.setBackground(Color.DARK_GRAY);
-		starlblTile8.setBounds(333, 161, 100, 100);
+		starlblTile8.setBounds(333, 200, 100, 100);
 		starlblTile8.setBorder(border);
 		contentPane.add(starlblTile8);
 		
@@ -338,7 +339,7 @@ public class GUI extends JFrame {
 		starlblTile9.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile9.setForeground(Color.CYAN);
 		starlblTile9.setBackground(Color.DARK_GRAY);
-		starlblTile9.setBounds(35, 261, 100, 100);
+		starlblTile9.setBounds(35, 300, 100, 100);
 		starlblTile9.setBorder(border);
 		contentPane.add(starlblTile9);
 		
@@ -346,7 +347,7 @@ public class GUI extends JFrame {
 		starlblTile10.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile10.setForeground(Color.CYAN);
 		starlblTile10.setBackground(Color.DARK_GRAY);
-		starlblTile10.setBounds(134, 261, 100, 100);
+		starlblTile10.setBounds(134, 300, 100, 100);
 		starlblTile10.setBorder(border);
 		contentPane.add(starlblTile10);
 		
@@ -354,7 +355,7 @@ public class GUI extends JFrame {
 		starlblTile11.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile11.setForeground(Color.CYAN);
 		starlblTile11.setBackground(Color.DARK_GRAY);
-		starlblTile11.setBounds(234, 261, 100, 100);
+		starlblTile11.setBounds(234, 300, 100, 100);
 		starlblTile11.setBorder(border);
 		contentPane.add(starlblTile11);
 		
@@ -362,7 +363,7 @@ public class GUI extends JFrame {
 		starlblTile12.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile12.setForeground(Color.CYAN);
 		starlblTile12.setBackground(Color.DARK_GRAY);
-		starlblTile12.setBounds(333, 261, 100, 100);
+		starlblTile12.setBounds(333, 300, 100, 100);
 		starlblTile12.setBorder(border);
 		contentPane.add(starlblTile12);
 		
@@ -370,7 +371,7 @@ public class GUI extends JFrame {
 		starlblTile13.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile13.setForeground(Color.CYAN);
 		starlblTile13.setBackground(Color.DARK_GRAY);
-		starlblTile13.setBounds(35, 360, 100, 100);
+		starlblTile13.setBounds(35, 399, 100, 100);
 		starlblTile13.setBorder(border);
 		contentPane.add(starlblTile13);
 		
@@ -378,7 +379,7 @@ public class GUI extends JFrame {
 		starlblTile14.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile14.setForeground(Color.CYAN);
 		starlblTile14.setBackground(Color.DARK_GRAY);
-		starlblTile14.setBounds(134, 360, 100, 100);
+		starlblTile14.setBounds(134, 399, 100, 100);
 		starlblTile14.setBorder(border);
 		contentPane.add(starlblTile14);
 		
@@ -386,7 +387,7 @@ public class GUI extends JFrame {
 		starlblTile15.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile15.setForeground(Color.CYAN);
 		starlblTile15.setBackground(Color.DARK_GRAY);
-		starlblTile15.setBounds(234, 360, 100, 100);
+		starlblTile15.setBounds(234, 399, 100, 100);
 		starlblTile15.setBorder(border);
 		contentPane.add(starlblTile15);
 		
@@ -394,7 +395,7 @@ public class GUI extends JFrame {
 		starlblTile16.setVerticalAlignment(SwingConstants.TOP);
 		starlblTile16.setForeground(Color.CYAN);
 		starlblTile16.setBackground(Color.DARK_GRAY);
-		starlblTile16.setBounds(333, 360, 100, 100);
+		starlblTile16.setBounds(333, 399, 100, 100);
 		starlblTile16.setBorder(border);
 		contentPane.add(starlblTile16);
 		
@@ -402,7 +403,7 @@ public class GUI extends JFrame {
 		cruiserlblTile1.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile1.setForeground(Color.CYAN);
 		cruiserlblTile1.setBackground(Color.DARK_GRAY);
-		cruiserlblTile1.setBounds(35, 61, 100, 100);
+		cruiserlblTile1.setBounds(35, 100, 100, 100);
 		cruiserlblTile1.setBorder(border);
 		contentPane.add(cruiserlblTile1);
 		
@@ -410,7 +411,7 @@ public class GUI extends JFrame {
 		cruiserlblTile2.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile2.setForeground(Color.CYAN);
 		cruiserlblTile2.setBackground(Color.DARK_GRAY);
-		cruiserlblTile2.setBounds(134, 61, 100, 100);
+		cruiserlblTile2.setBounds(134, 100, 100, 100);
 		cruiserlblTile2.setBorder(border);
 		contentPane.add(cruiserlblTile2);
 		
@@ -418,7 +419,7 @@ public class GUI extends JFrame {
 		cruiserlblTile3.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile3.setForeground(Color.CYAN);
 		cruiserlblTile3.setBackground(Color.DARK_GRAY);
-		cruiserlblTile3.setBounds(234, 61, 100, 100);
+		cruiserlblTile3.setBounds(234, 100, 100, 100);
 		cruiserlblTile3.setBorder(border);
 		contentPane.add(cruiserlblTile3);
 		
@@ -426,7 +427,7 @@ public class GUI extends JFrame {
 		cruiserlblTile4.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile4.setForeground(Color.CYAN);
 		cruiserlblTile4.setBackground(Color.DARK_GRAY);
-		cruiserlblTile4.setBounds(333, 61, 100, 100);
+		cruiserlblTile4.setBounds(333, 100, 100, 100);
 		cruiserlblTile4.setBorder(border);
 		contentPane.add(cruiserlblTile4);
 		
@@ -434,7 +435,7 @@ public class GUI extends JFrame {
 		cruiserlblTile5.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile5.setForeground(Color.CYAN);
 		cruiserlblTile5.setBackground(Color.DARK_GRAY);
-		cruiserlblTile5.setBounds(35, 161, 100, 100);
+		cruiserlblTile5.setBounds(35, 200, 100, 100);
 		cruiserlblTile5.setBorder(border);
 		contentPane.add(cruiserlblTile5);
 		
@@ -442,7 +443,7 @@ public class GUI extends JFrame {
 		cruiserlblTile6.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile6.setForeground(Color.CYAN);
 		cruiserlblTile6.setBackground(Color.DARK_GRAY);
-		cruiserlblTile6.setBounds(134, 161, 100, 100);
+		cruiserlblTile6.setBounds(134, 200, 100, 100);
 		cruiserlblTile6.setBorder(border);
 		contentPane.add(cruiserlblTile6);
 		
@@ -450,7 +451,7 @@ public class GUI extends JFrame {
 		cruiserlblTile7.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile7.setForeground(Color.CYAN);
 		cruiserlblTile7.setBackground(Color.DARK_GRAY);
-		cruiserlblTile7.setBounds(234, 161, 100, 100);
+		cruiserlblTile7.setBounds(234, 200, 100, 100);
 		cruiserlblTile7.setBorder(border);
 		contentPane.add(cruiserlblTile7);
 		
@@ -458,7 +459,7 @@ public class GUI extends JFrame {
 		cruiserlblTile8.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile8.setForeground(Color.CYAN);
 		cruiserlblTile8.setBackground(Color.DARK_GRAY);
-		cruiserlblTile8.setBounds(333, 161, 100, 100);
+		cruiserlblTile8.setBounds(333, 200, 100, 100);
 		cruiserlblTile8.setBorder(border);
 		contentPane.add(cruiserlblTile8);
 		
@@ -466,7 +467,7 @@ public class GUI extends JFrame {
 		cruiserlblTile9.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile9.setForeground(Color.CYAN);
 		cruiserlblTile9.setBackground(Color.DARK_GRAY);
-		cruiserlblTile9.setBounds(35, 261, 100, 100);
+		cruiserlblTile9.setBounds(35, 300, 100, 100);
 		cruiserlblTile9.setBorder(border);
 		contentPane.add(cruiserlblTile9);
 		
@@ -474,7 +475,7 @@ public class GUI extends JFrame {
 		cruiserlblTile10.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile10.setForeground(Color.CYAN);
 		cruiserlblTile10.setBackground(Color.DARK_GRAY);
-		cruiserlblTile10.setBounds(134, 261, 100, 100);
+		cruiserlblTile10.setBounds(134, 300, 100, 100);
 		cruiserlblTile10.setBorder(border);
 		contentPane.add(cruiserlblTile10);
 		
@@ -482,7 +483,7 @@ public class GUI extends JFrame {
 		cruiserlblTile11.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile11.setForeground(Color.CYAN);
 		cruiserlblTile11.setBackground(Color.DARK_GRAY);
-		cruiserlblTile11.setBounds(234, 261, 100, 100);
+		cruiserlblTile11.setBounds(234, 300, 100, 100);
 		cruiserlblTile11.setBorder(border);
 		contentPane.add(cruiserlblTile11);
 		
@@ -490,7 +491,7 @@ public class GUI extends JFrame {
 		cruiserlblTile12.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile12.setForeground(Color.CYAN);
 		cruiserlblTile12.setBackground(Color.DARK_GRAY);
-		cruiserlblTile12.setBounds(333, 261, 100, 100);
+		cruiserlblTile12.setBounds(333, 300, 100, 100);
 		cruiserlblTile12.setBorder(border);
 		contentPane.add(cruiserlblTile12);
 		
@@ -498,7 +499,7 @@ public class GUI extends JFrame {
 		cruiserlblTile13.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile13.setForeground(Color.CYAN);
 		cruiserlblTile13.setBackground(Color.DARK_GRAY);
-		cruiserlblTile13.setBounds(35, 360, 100, 100);
+		cruiserlblTile13.setBounds(35, 399, 100, 100);
 		cruiserlblTile13.setBorder(border);
 		contentPane.add(cruiserlblTile13);
 		
@@ -506,7 +507,7 @@ public class GUI extends JFrame {
 		cruiserlblTile14.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile14.setForeground(Color.CYAN);
 		cruiserlblTile14.setBackground(Color.DARK_GRAY);
-		cruiserlblTile14.setBounds(134, 360, 100, 100);
+		cruiserlblTile14.setBounds(134, 399, 100, 100);
 		cruiserlblTile14.setBorder(border);
 		contentPane.add(cruiserlblTile14);
 		
@@ -514,7 +515,7 @@ public class GUI extends JFrame {
 		cruiserlblTile15.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile15.setForeground(Color.CYAN);
 		cruiserlblTile15.setBackground(Color.DARK_GRAY);
-		cruiserlblTile15.setBounds(234, 360, 100, 100);
+		cruiserlblTile15.setBounds(234, 399, 100, 100);
 		cruiserlblTile15.setBorder(border);
 		contentPane.add(cruiserlblTile15);
 		
@@ -522,7 +523,7 @@ public class GUI extends JFrame {
 		cruiserlblTile16.setVerticalAlignment(SwingConstants.TOP);
 		cruiserlblTile16.setForeground(Color.CYAN);
 		cruiserlblTile16.setBackground(Color.DARK_GRAY);
-		cruiserlblTile16.setBounds(333, 360, 100, 100);
+		cruiserlblTile16.setBounds(333, 399, 100, 100);
 		cruiserlblTile16.setBorder(border);
 		contentPane.add(cruiserlblTile16);
 		
@@ -530,7 +531,7 @@ public class GUI extends JFrame {
 		shooterlblTile1.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile1.setForeground(Color.CYAN);
 		shooterlblTile1.setBackground(Color.DARK_GRAY);
-		shooterlblTile1.setBounds(35, 61, 100, 100);
+		shooterlblTile1.setBounds(35, 100, 100, 100);
 		shooterlblTile1.setBorder(border);
 		contentPane.add(shooterlblTile1);
 		
@@ -538,7 +539,7 @@ public class GUI extends JFrame {
 		shooterlblTile2.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile2.setForeground(Color.CYAN);
 		shooterlblTile2.setBackground(Color.DARK_GRAY);
-		shooterlblTile2.setBounds(134, 61, 100, 100);
+		shooterlblTile2.setBounds(134, 100, 100, 100);
 		shooterlblTile2.setBorder(border);
 		contentPane.add(shooterlblTile2);
 		
@@ -546,7 +547,7 @@ public class GUI extends JFrame {
 		shooterlblTile3.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile3.setForeground(Color.CYAN);
 		shooterlblTile3.setBackground(Color.DARK_GRAY);
-		shooterlblTile3.setBounds(234, 61, 100, 100);
+		shooterlblTile3.setBounds(234, 100, 100, 100);
 		shooterlblTile3.setBorder(border);
 		contentPane.add(shooterlblTile3);
 		
@@ -554,7 +555,7 @@ public class GUI extends JFrame {
 		shooterlblTile4.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile4.setForeground(Color.CYAN);
 		shooterlblTile4.setBackground(Color.DARK_GRAY);
-		shooterlblTile4.setBounds(333, 61, 100, 100);
+		shooterlblTile4.setBounds(333, 100, 100, 100);
 		shooterlblTile4.setBorder(border);
 		contentPane.add(shooterlblTile4);
 		
@@ -562,7 +563,7 @@ public class GUI extends JFrame {
 		shooterlblTile5.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile5.setForeground(Color.CYAN);
 		shooterlblTile5.setBackground(Color.DARK_GRAY);
-		shooterlblTile5.setBounds(35, 161, 100, 100);
+		shooterlblTile5.setBounds(35, 200, 100, 100);
 		shooterlblTile5.setBorder(border);
 		contentPane.add(shooterlblTile5);
 		
@@ -570,7 +571,7 @@ public class GUI extends JFrame {
 		shooterlblTile6.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile6.setForeground(Color.CYAN);
 		shooterlblTile6.setBackground(Color.DARK_GRAY);
-		shooterlblTile6.setBounds(134, 161, 100, 100);
+		shooterlblTile6.setBounds(134, 200, 100, 100);
 		shooterlblTile6.setBorder(border);
 		contentPane.add(shooterlblTile6);
 		
@@ -578,7 +579,7 @@ public class GUI extends JFrame {
 		shooterlblTile7.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile7.setForeground(Color.CYAN);
 		shooterlblTile7.setBackground(Color.DARK_GRAY);
-		shooterlblTile7.setBounds(234, 161, 100, 100);
+		shooterlblTile7.setBounds(234, 200, 100, 100);
 		shooterlblTile7.setBorder(border);
 		contentPane.add(shooterlblTile7);
 		
@@ -586,7 +587,7 @@ public class GUI extends JFrame {
 		shooterlblTile8.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile8.setForeground(Color.CYAN);
 		shooterlblTile8.setBackground(Color.DARK_GRAY);
-		shooterlblTile8.setBounds(333, 161, 100, 100);
+		shooterlblTile8.setBounds(333, 200, 100, 100);
 		shooterlblTile8.setBorder(border);
 		contentPane.add(shooterlblTile8);
 		
@@ -594,7 +595,7 @@ public class GUI extends JFrame {
 		shooterlblTile9.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile9.setForeground(Color.CYAN);
 		shooterlblTile9.setBackground(Color.DARK_GRAY);
-		shooterlblTile9.setBounds(35, 261, 100, 100);
+		shooterlblTile9.setBounds(35, 300, 100, 100);
 		shooterlblTile9.setBorder(border);
 		contentPane.add(shooterlblTile9);
 		
@@ -602,7 +603,7 @@ public class GUI extends JFrame {
 		shooterlblTile10.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile10.setForeground(Color.CYAN);
 		shooterlblTile10.setBackground(Color.DARK_GRAY);
-		shooterlblTile10.setBounds(134, 261, 100, 100);
+		shooterlblTile10.setBounds(134, 300, 100, 100);
 		shooterlblTile10.setBorder(border);
 		contentPane.add(shooterlblTile10);
 		
@@ -610,7 +611,7 @@ public class GUI extends JFrame {
 		shooterlblTile11.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile11.setForeground(Color.CYAN);
 		shooterlblTile11.setBackground(Color.DARK_GRAY);
-		shooterlblTile11.setBounds(234, 261, 100, 100);
+		shooterlblTile11.setBounds(234, 300, 100, 100);
 		shooterlblTile11.setBorder(border);
 		contentPane.add(shooterlblTile11);
 		
@@ -618,7 +619,7 @@ public class GUI extends JFrame {
 		shooterlblTile12.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile12.setForeground(Color.CYAN);
 		shooterlblTile12.setBackground(Color.DARK_GRAY);
-		shooterlblTile12.setBounds(333, 261, 100, 100);
+		shooterlblTile12.setBounds(333, 300, 100, 100);
 		shooterlblTile12.setBorder(border);
 		contentPane.add(shooterlblTile12);
 		
@@ -626,7 +627,7 @@ public class GUI extends JFrame {
 		shooterlblTile13.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile13.setForeground(Color.CYAN);
 		shooterlblTile13.setBackground(Color.DARK_GRAY);
-		shooterlblTile13.setBounds(35, 360, 100, 100);
+		shooterlblTile13.setBounds(35, 399, 100, 100);
 		shooterlblTile13.setBorder(border);
 		contentPane.add(shooterlblTile13);
 		
@@ -634,7 +635,7 @@ public class GUI extends JFrame {
 		shooterlblTile14.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile14.setForeground(Color.CYAN);
 		shooterlblTile14.setBackground(Color.DARK_GRAY);
-		shooterlblTile14.setBounds(134, 360, 100, 100);
+		shooterlblTile14.setBounds(134, 399, 100, 100);
 		shooterlblTile14.setBorder(border);
 		contentPane.add(shooterlblTile14);
 		
@@ -642,7 +643,7 @@ public class GUI extends JFrame {
 		shooterlblTile15.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile15.setForeground(Color.CYAN);
 		shooterlblTile15.setBackground(Color.DARK_GRAY);
-		shooterlblTile15.setBounds(234, 360, 100, 100);
+		shooterlblTile15.setBounds(234, 399, 100, 100);
 		shooterlblTile15.setBorder(border);
 		contentPane.add(shooterlblTile15);
 		
@@ -650,7 +651,7 @@ public class GUI extends JFrame {
 		shooterlblTile16.setVerticalAlignment(SwingConstants.TOP);
 		shooterlblTile16.setForeground(Color.CYAN);
 		shooterlblTile16.setBackground(Color.DARK_GRAY);
-		shooterlblTile16.setBounds(333, 360, 100, 100);
+		shooterlblTile16.setBounds(333, 399, 100, 100);
 		shooterlblTile16.setBorder(border);
 		contentPane.add(shooterlblTile16);
 		
@@ -660,12 +661,13 @@ public class GUI extends JFrame {
 		listOfShooterTiles.addAll(Arrays.asList(shooterlblTile1, shooterlblTile2, shooterlblTile3, shooterlblTile4, shooterlblTile5, shooterlblTile6, shooterlblTile7, shooterlblTile8, shooterlblTile9, shooterlblTile10, shooterlblTile11, shooterlblTile12, shooterlblTile13, shooterlblTile14, shooterlblTile15, shooterlblTile16));
 
 		
-		JButton btnMove = new JButton("Move");
-		btnMove.setEnabled(false);
+		JButton btnMove = new JButton("MOVE SHIPS");
+		btnMove.setBackground(Color.BLACK);
+		btnMove.setForeground(Color.ORANGE);
+		btnMove.setFont(new Font("Agency FB", Font.BOLD, 15));
 		
-		btnMove.setBounds(549, 506, 89, 23);
+		btnMove.setBounds(465, 433, 120, 23);
 		contentPane.add(btnMove);
-		btnMove.setEnabled(true);
 		btnMove.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -708,7 +710,10 @@ public class GUI extends JFrame {
 			}
 		});
 		
-		JButton btnChangeMode = new JButton("Mode");
+		JButton btnChangeMode = new JButton("CHANGE MODE");
+		btnChangeMode.setBackground(Color.BLACK);
+		btnChangeMode.setForeground(Color.ORANGE);
+		btnChangeMode.setFont(new Font("Agency FB", Font.BOLD, 15));
 		btnChangeMode.setEnabled(true);
 		btnChangeMode.addMouseListener(new MouseAdapter() {
 			@Override
@@ -717,10 +722,90 @@ public class GUI extends JFrame {
 			}
 		});
 		
-		btnChangeMode.setBounds(648, 506, 89, 23);
+		btnChangeMode.setBounds(465, 467, 120, 23);
 		contentPane.add(btnChangeMode);
 		
+		JLabel lblSkyWars = new JLabel("SKY WARS");
+		lblSkyWars.setFont(new Font("Agency FB", Font.BOLD | Font.ITALIC, 29));
+		lblSkyWars.setForeground(Color.ORANGE);
+		lblSkyWars.setBounds(181, 11, 207, 39);
+		contentPane.add(lblSkyWars);
+		
+		JLabel lblScore = new JLabel("SCORE");
+		lblScore.setHorizontalAlignment(SwingConstants.CENTER);
+		lblScore.setForeground(Color.WHITE);
+		lblScore.setFont(new Font("MS Gothic", Font.BOLD, 15));
+		lblScore.setBounds(82, 36, 108, 39);
+		contentPane.add(lblScore);
+		
+		JLabel lblHiscore = new JLabel("HIGH SCORE");
+		lblHiscore.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHiscore.setFont(new Font("MS Gothic", Font.BOLD, 15));
+		lblHiscore.setForeground(Color.WHITE);
+		lblHiscore.setBounds(280, 36, 108, 39);
+		contentPane.add(lblHiscore);
+		
+		JLabel lbldefIcon = new JLabel("");
+		lbldefIcon.setIcon(new ImageIcon(GUI.class.getResource("/images/cobra_defensive.png")));
+		lbldefIcon.setBounds(465, 119, 43, 100);
+		contentPane.add(lbldefIcon);
+		
+		JLabel lbloffIcon = new JLabel("");
+		lbloffIcon.setIcon(new ImageIcon(GUI.class.getResource("/images/cobra_offensive.png")));
+		lbloffIcon.setBounds(465, 173, 43, 100);
+		contentPane.add(lbloffIcon);
+		
+		JLabel lblTheMasterSpace = new JLabel("<html>\r\nTHE MASTER SPACE SHIP<br/><br/>\r\nDEFENSIVE MODE - TAKES 2 ENEMIES TO DEFEAT\r\n</html>");
+		lblTheMasterSpace.setVerticalAlignment(SwingConstants.TOP);
+		lblTheMasterSpace.setFont(new Font("MS Gothic", Font.BOLD, 12));
+		lblTheMasterSpace.setForeground(Color.WHITE);
+		lblTheMasterSpace.setBounds(518, 101, 234, 62);
+		contentPane.add(lblTheMasterSpace);
+		
+		JLabel lblOffensiveMode = new JLabel("<html>\r\nOFFENSIVE MODE - TAKES 3 ENEMIES TO DEFEAT\r\n</html>");
+		lblOffensiveMode.setForeground(Color.WHITE);
+		lblOffensiveMode.setFont(new Font("MS Gothic", Font.BOLD, 12));
+		lblOffensiveMode.setBounds(518, 157, 234, 62);
+		contentPane.add(lblOffensiveMode);
+		
+		JLabel lblbtlStar = new JLabel("");
+		lblbtlStar.setIcon(new ImageIcon(GUI.class.getResource("/images/fighterSmall.png")));
+		lblbtlStar.setBounds(465, 190, 43, 100);
+		contentPane.add(lblbtlStar);
+		
+		JLabel lblTheEnemiesBattle = new JLabel("<html>\r\n-----------------------------<br/><br/>\r\nTHE ENEMIES<br/><br/><br/>\r\nBATTLE STAR - 25 PTS<br/><br/><br/><br/>\r\nBATTLE SHOOTER - 50 PTS<br/><br/><br/><br/>\r\nBATTLE CRUISER - 75 PTS<br/><br/><br/>\r\n</html>");
+		lblTheEnemiesBattle.setVerticalAlignment(SwingConstants.TOP);
+		lblTheEnemiesBattle.setForeground(Color.WHITE);
+		lblTheEnemiesBattle.setFont(new Font("MS Gothic", Font.BOLD, 12));
+		lblTheEnemiesBattle.setBounds(518, 211, 234, 189);
+		contentPane.add(lblTheEnemiesBattle);
+		
+		JLabel lblbtlShtr = new JLabel("");
+		lblbtlShtr.setIcon(new ImageIcon(GUI.class.getResource("/images/gunshipSmall.png")));
+		lblbtlShtr.setBounds(408, 310, 100, 100);
+		contentPane.add(lblbtlShtr);
+		
+		JLabel lblbtlCruisr = new JLabel("");
+		lblbtlCruisr.setIcon(new ImageIcon(GUI.class.getResource("/images/corvetteSmall.png")));
+		lblbtlCruisr.setBounds(408, 310, 100, 100);
+		contentPane.add(lblbtlCruisr);
+		
+		JLabel lblScoreValue = new JLabel("0000");
+		lblScoreValue.setHorizontalAlignment(SwingConstants.CENTER);
+		lblScoreValue.setForeground(Color.WHITE);
+		lblScoreValue.setFont(new Font("MS Gothic", Font.BOLD, 15));
+		lblScoreValue.setBounds(82, 61, 108, 39);
+		contentPane.add(lblScoreValue);
+		
+		JLabel lblHighScoreValue = new JLabel("0000");
+		lblHighScoreValue.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHighScoreValue.setForeground(Color.WHITE);
+		lblHighScoreValue.setFont(new Font("MS Gothic", Font.BOLD, 15));
+		lblHighScoreValue.setBounds(280, 61, 108, 39);
+		contentPane.add(lblHighScoreValue);
+		
 		JLabel lblBackGround = new JLabel("");
+		lblBackGround.setFont(new Font("Agency FB", Font.BOLD, 12));
 		lblBackGround.setIcon(new ImageIcon(GUI.class.getResource(SKY_BACKGROUND)));
 		lblBackGround.setBounds(0, 0, 800, 600);
 		contentPane.add(lblBackGround);
