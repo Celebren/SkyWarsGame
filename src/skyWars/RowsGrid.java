@@ -1,12 +1,17 @@
 package skyWars;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RowsGrid {
+public class RowsGrid implements Serializable {
 	
 	// this is the sky
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// declare variables and collecitons
 	private ArrayList<TilesRow> gridOfRows = new ArrayList<TilesRow>();
 	private HashMap<Integer, ArrayList<Integer>> mapOfMoves = new HashMap<Integer, ArrayList<Integer>>();

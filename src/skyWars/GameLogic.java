@@ -1,10 +1,17 @@
 package skyWars;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class GameLogic {
+
+public class GameLogic implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private int rngMin; 
 	private int rngMax;
@@ -12,7 +19,7 @@ public class GameLogic {
 	private int enemyShipSpawnTile;
 	private int chanceOfEnemySpawn;
 	private int enemyType;
-	private int masterMode = 0; // 0 = defensive mode, 1 = offensive mode
+	private int masterMode; // 0 = defensive mode, 1 = offensive mode
 	private int destroyedShipId = 0;
 	
 	private int score = 0;
@@ -43,9 +50,9 @@ public class GameLogic {
 	private ArrayList<Integer> movesListForStar = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForCruiser = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForShooter = new ArrayList<Integer>();
-		
 	
 	public GameLogic () {}
+
 	
 	// call when reset button is pressed
 	public int masterShipSpawn() {		
@@ -343,6 +350,8 @@ public class GameLogic {
 	public void setHighScore(int highScore) {
 		this.highScore = highScore;
 	}
+
+	
 	
 	
 

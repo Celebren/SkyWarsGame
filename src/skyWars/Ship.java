@@ -1,8 +1,14 @@
 package skyWars;
 
-public abstract class Ship {
+import java.io.Serializable;
+
+public abstract class Ship implements Serializable {
 	// Enemy Ships superclass for polymorphism
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/* Ships' id determines it's type: 
 	 * 0 - null
 	 * 1 - masterSpaceShip (Cobra)

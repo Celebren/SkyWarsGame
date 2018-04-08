@@ -1,9 +1,14 @@
 package skyWars;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TilesRow {
+public class TilesRow implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// each row has an id from 1 to 4
 	private int rowId;
 	private int x; // generic x variable for maths calculations when adding tiles

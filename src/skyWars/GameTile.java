@@ -1,10 +1,16 @@
 package skyWars;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class GameTile {
+public class GameTile implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	// each tile has an id from 1 to 16
 	int tileId;
@@ -82,9 +88,5 @@ public class GameTile {
 
 	public ArrayList<Ship> getListOfShipsOnTile() {
 		return this.listOfShipsOnTile;
-	}
-
-	public void setListOfShipsOnTile(ArrayList<Ship> listOfShipsOnTile) {
-		this.listOfShipsOnTile = listOfShipsOnTile;
 	}
 }
