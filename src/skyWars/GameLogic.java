@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-public class ButtonsLogic {
+public class GameLogic {
 	
 	private int rngMin; 
 	private int rngMax;
@@ -28,7 +28,9 @@ public class ButtonsLogic {
 	private GameTile battleStarTile;
 	private GameTile battleCruiserTile;
 	private GameTile battleShooterTile;
+	
 	private Ship destroyedShip;
+	
 	private MasterSpaceShip masterSpaceShip = new MasterSpaceShip();
 	private BattleStar battleStarShip = new BattleStar();
 	private BattleCruiser battleCruiserShip = new BattleCruiser();
@@ -43,7 +45,7 @@ public class ButtonsLogic {
 	private ArrayList<Integer> movesListForShooter = new ArrayList<Integer>();
 		
 	
-	public ButtonsLogic () {}
+	public GameLogic () {}
 	
 	// call when reset button is pressed
 	public int masterShipSpawn() {		
@@ -208,60 +210,71 @@ public class ButtonsLogic {
 			if (masterMode == 0) {
 				if (this.masterShipTile.getListOfShipsOnTile().size() == 2) {
 					
-					for (Ship s : this.masterShipTile.getListOfShipsOnTile()) {
-						if (s != masterSpaceShip) {
-							destroyedShip = s;
-							this.masterShipTile.removeShipFromList(s);
-							break;
-						}
-					}
-					System.out.println("Master ship wins against " + destroyedShip.getShipName());
-					
-					switch (destroyedShip.getShipTypeId()) {
-						case 2: battleStarTile = null; break;
-						case 3: battleCruiserTile = null; break;
-						case 4: battleShooterTile = null; break;
-					}
-					
-					destroyedShipId = destroyedShip.getShipTypeId();
+					destroyedShipId = masterShipWinsResolution();
 					
 				} else if (this.masterShipTile.getListOfShipsOnTile().size() > 2) {
-					// master ship loses
-					System.out.println("Master ship is destroyed");
-					destroyedShipId = 1;
+					// master ship loses					
+					destroyedShipId = masterShipDestroyedResolution();
+					
 				}
 				
 			} else if (masterMode == 1) { // offensive mode logic
 				if (this.masterShipTile.getListOfShipsOnTile().size() == 2 || this.masterShipTile.getListOfShipsOnTile().size() == 3) {
 
-					for (Ship s : this.masterShipTile.getListOfShipsOnTile()) {
-						if (s != masterSpaceShip) {
-							destroyedShip = s;
-							this.masterShipTile.removeShipFromList(s);
-							break;
-						}
-					}
-					System.out.println("Master ship wins against " + destroyedShip.getShipName());
-
-					switch (destroyedShip.getShipTypeId()) {
-					case 2: battleStarTile = null; break;
-					case 3: battleCruiserTile = null; break;
-					case 4: battleShooterTile = null; break;
-					}
-
-					destroyedShipId = destroyedShip.getShipTypeId();
+					destroyedShipId = masterShipWinsResolution();
 
 				} else if (this.masterShipTile.getListOfShipsOnTile().size() > 3) {
 					// master ship loses
-					System.out.println("Master ship is destroyed");
-					destroyedShipId = 1;
+					destroyedShipId = masterShipDestroyedResolution();
 				}
 			}
 		}		
 		return destroyedShipId;
 	} // end conflicResolution()
 	
-	// calculateScore
+	public int masterShipWinsResolution() {
+		for (Ship s : this.masterShipTile.getListOfShipsOnTile()) {
+			if (s != masterSpaceShip) {
+				destroyedShip = s;
+				this.masterShipTile.removeShipFromList(s);
+				break;
+			}
+		}
+		System.out.println("Master ship wins against " + destroyedShip.getShipName());
+		
+		switch (destroyedShip.getShipTypeId()) {
+			case 2:
+				battleStarTile = null;
+				this.score += SCORE_STAR;
+				break;
+			case 3:
+				battleCruiserTile = null;
+				this.score += SCORE_CRUISER;
+				break;
+			case 4:
+				battleShooterTile = null;
+				this.score += SCORE_SHOOTER;
+				break;
+		}
+		
+		destroyedShipId = destroyedShip.getShipTypeId();
+		increaseHighScore();
+		return destroyedShipId;
+	} // masterShipWinsResolution()
+	
+	// increase highscore
+	public void increaseHighScore() {
+		if (this.score > this.highScore) {
+			setHighScore(this.score);
+		}
+	}
+	
+	public int masterShipDestroyedResolution() {
+		System.out.println("Master ship is destroyed");		
+		destroyedShipId = 1;
+		
+		return destroyedShipId;
+	}
 
 	public int getEnemyType() {
 		return this.enemyType;
@@ -313,6 +326,22 @@ public class ButtonsLogic {
 
 	public ArrayList<GameTile> getListOfTiles() {
 		return this.listOfTiles;
+	}
+
+	public int getScore() {
+		return this.score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getHighScore() {
+		return this.highScore;
+	}
+
+	public void setHighScore(int highScore) {
+		this.highScore = highScore;
 	}
 	
 	

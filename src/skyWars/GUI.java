@@ -1,19 +1,12 @@
 package skyWars;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-
-import javafx.application.Platform;
-
-import java.awt.GridLayout;
-import java.awt.Image;
 
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
@@ -25,8 +18,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.SwingConstants;
@@ -37,10 +28,19 @@ import javax.swing.JMenuItem;
 import java.awt.Font;
 
 public class GUI extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
+	/**
+	 * This class displays all graphical interface elements and 
+	 * communicates with the game logic via the GameLogic class
+	 *  
+	 */
 	private JPanel contentPane;
 	
-	private int NUMBER_OF_TILES = 16;
+	private final int NUMBER_OF_TILES = 16;
 	
 	private final String SKY_BACKGROUND = "/images/space.jpg";
 	
@@ -67,7 +67,9 @@ public class GUI extends JFrame {
 	private ArrayList<JLabel> listOfCruiserTiles = new ArrayList<JLabel>();
 	private ArrayList<JLabel> listOfShooterTiles = new ArrayList<JLabel>();
 	
-	private ButtonsLogic bl1 = new ButtonsLogic();
+	private ArrayList<JLabel> scoreAndHighScore = new ArrayList<JLabel>();
+	
+	private GameLogic gameLogic = new GameLogic();
 
 	/**
 	 * Launch the application.
@@ -666,42 +668,47 @@ public class GUI extends JFrame {
 		btnMove.setForeground(Color.ORANGE);
 		btnMove.setFont(new Font("Agency FB", Font.BOLD, 15));
 		
-		btnMove.setBounds(465, 433, 120, 23);
+		btnMove.setBounds(465, 433, 120, 80);
 		contentPane.add(btnMove);
 		btnMove.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				clearTiles();
 				
-				int move = bl1.moveMasterShip();
+				int move = gameLogic.moveMasterShip();
 				drawMasterShip(move);
 				
-				bl1.moveEnemyShips();
+				gameLogic.moveEnemyShips();
 				drawMovedEnemies();
 				
-				int spawnEnemy = bl1.enemyShipSpawn();
+				int spawnEnemy = gameLogic.enemyShipSpawn();
 				if (spawnEnemy > 0) {
-					int enemyType = bl1.getEnemyType();
+					int enemyType = gameLogic.getEnemyType();
 					drawSpawnedEnemies(spawnEnemy, enemyType);
 					enemyType = 0;
 				}
 				
 				// check for conflict resolution
-				whoExploded = bl1.conflictResolution();
+				whoExploded = gameLogic.conflictResolution();
 										
 			    // display exposion
 				if (whoExploded > 0) {							
 					displayExplosion(whoExploded);
-				}						
+				}
+				
+				// update scores
+				updateScores();
 				
 				// check for game over state
 				if (whoExploded == 1) {
 					final ImageIcon icon = new ImageIcon(GUI.class.getResource(EXPLOSION));
-					Object[] options = {"Start Again","Quit Game"};
+					Object[] options = {"New Game","Quit Game"};
 					
-					int selection = JOptionPane.showOptionDialog(contentPane, "Game Over", "Game Over", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE, icon, options, options[0]);
+					String output = "Master Space Ship destroyed!!!\n\nGAME OVER\n\nYour final score: " + gameLogic.getScore() + "\n\n";
+					
+					int selection = JOptionPane.showOptionDialog(contentPane, output, "Game Over", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE, icon, options, options[0]);
 					if (selection == 0) {
-						resetTiles();
+						resetButton();
 					} else {
 						System.exit(0);
 					}
@@ -722,7 +729,7 @@ public class GUI extends JFrame {
 			}
 		});
 		
-		btnChangeMode.setBounds(465, 467, 120, 23);
+		btnChangeMode.setBounds(598, 433, 120, 80);
 		contentPane.add(btnChangeMode);
 		
 		JLabel lblSkyWars = new JLabel("SKY WARS");
@@ -797,12 +804,16 @@ public class GUI extends JFrame {
 		lblScoreValue.setBounds(82, 61, 108, 39);
 		contentPane.add(lblScoreValue);
 		
+		scoreAndHighScore.add(lblScoreValue);
+		
 		JLabel lblHighScoreValue = new JLabel("0000");
 		lblHighScoreValue.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHighScoreValue.setForeground(Color.WHITE);
 		lblHighScoreValue.setFont(new Font("MS Gothic", Font.BOLD, 15));
 		lblHighScoreValue.setBounds(280, 61, 108, 39);
 		contentPane.add(lblHighScoreValue);
+		
+		scoreAndHighScore.add(lblHighScoreValue);
 		
 		JLabel lblBackGround = new JLabel("");
 		lblBackGround.setFont(new Font("Agency FB", Font.BOLD, 12));
@@ -815,10 +826,10 @@ public class GUI extends JFrame {
 	
 	// reset tiles method
 	public void resetTiles() {
-		bl1.setMasterShipTile(null);
-		bl1.setBattleStarTile(null);
-		bl1.setBattleCruiserTile(null);
-		bl1.setBattleShooterTile(null);
+		gameLogic.setMasterShipTile(null);
+		gameLogic.setBattleStarTile(null);
+		gameLogic.setBattleCruiserTile(null);
+		gameLogic.setBattleShooterTile(null);
 		
 		for (JLabel label : listOfTiles) {
 			label.setIcon(null);
@@ -859,9 +870,9 @@ public class GUI extends JFrame {
 			}
 		}*/
 		
-		if (bl1.getMasterShipTile() != null) {
+		if (gameLogic.getMasterShipTile() != null) {
 			for (int i = 0; i < NUMBER_OF_TILES; i++) {
-				if (bl1.getMasterShipTile().getTileId()-1 == i) {
+				if (gameLogic.getMasterShipTile().getTileId()-1 == i) {
 					listOfTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(masterShipIcon)));
 					}					
 				}
@@ -883,23 +894,23 @@ public class GUI extends JFrame {
 	} // end drawSpawnedEnemies()
 	
 	public void drawMovedEnemies() {
-		if (bl1.getBattleStarTile() != null) {
+		if (gameLogic.getBattleStarTile() != null) {
 			for (int i = 0; i < NUMBER_OF_TILES; i++) {
-				if (bl1.getBattleStarTile().getTileId()-1 == i) {
+				if (gameLogic.getBattleStarTile().getTileId()-1 == i) {
 					listOfStarTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_STAR)));
 					}					
 				}
 		}
-		if (bl1.getBattleCruiserTile() != null) {
+		if (gameLogic.getBattleCruiserTile() != null) {
 			for (int i = 0; i < NUMBER_OF_TILES; i++) {
-				if (bl1.getBattleCruiserTile().getTileId()-1 == i) {
+				if (gameLogic.getBattleCruiserTile().getTileId()-1 == i) {
 					listOfCruiserTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_CRUISER)));
 					}					
 				}
 		}
-		if (bl1.getBattleShooterTile() != null) {
+		if (gameLogic.getBattleShooterTile() != null) {
 			for (int i = 0; i < NUMBER_OF_TILES; i++) {
-				if (bl1.getBattleShooterTile().getTileId()-1 == i) {
+				if (gameLogic.getBattleShooterTile().getTileId()-1 == i) {
 					listOfShooterTiles.get(i).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_SHOOTER)));
 					}					
 				}
@@ -909,10 +920,10 @@ public class GUI extends JFrame {
 	//displayExplosion()
 	private void displayExplosion(int whoExploded) {
 		switch (whoExploded) {
-			case 1: listOfTiles.get(bl1.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(MASTER_SHIP_EXPLOSION))); break;
-			case 2: listOfStarTiles.get(bl1.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_STAR_EXPLOSION))); break;
-			case 3: listOfCruiserTiles.get(bl1.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_CRUISER_EXPLOSION))); break;
-			case 4: listOfShooterTiles.get(bl1.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_SHOOTER_EXPLOSION))); break;
+			case 1: listOfTiles.get(gameLogic.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(MASTER_SHIP_EXPLOSION))); break;
+			case 2: listOfStarTiles.get(gameLogic.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_STAR_EXPLOSION))); break;
+			case 3: listOfCruiserTiles.get(gameLogic.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_CRUISER_EXPLOSION))); break;
+			case 4: listOfShooterTiles.get(gameLogic.getMasterShipTile().getTileId()-1).setIcon(new ImageIcon(GUI.class.getResource(BATTLE_SHOOTER_EXPLOSION))); break;
 			default: break;
 			
 		}
@@ -920,32 +931,41 @@ public class GUI extends JFrame {
 	
 	//swap betweenModes
 	private void changeModes() {
-		if (bl1.getMasterMode() == 0) {
-			bl1.setMasterMode(1);
+		if (gameLogic.getMasterMode() == 0) {
+			gameLogic.setMasterMode(1);
 			masterShipIcon = MASTER_SHIP_OFFENSIVE;
-		} else if (bl1.getMasterMode() == 1) {
-			bl1.setMasterMode(0);
+		} else if (gameLogic.getMasterMode() == 1) {
+			gameLogic.setMasterMode(0);
 			masterShipIcon = MASTER_SHIP_DEFENSIVE;
 		}
-		drawMasterShip(bl1.getMasterShipTile().getTileId());
+		drawMasterShip(gameLogic.getMasterShipTile().getTileId());
 	}
 	
 	private void resetButton() {
 		System.out.println("---------------------------------------------------\nreset clicked");
 		
+		// reset score
+		gameLogic.setScore(0);
+		updateScores();
 		resetTiles();
 		
-		for (GameTile t : bl1.getListOfTiles()) {
+		for (GameTile t : gameLogic.getListOfTiles()) {
 			t.getListOfShipsOnTile().clear();
 		}
-		bl1.setMasterMode(0);
+		gameLogic.setMasterMode(0);
 		masterShipIcon = MASTER_SHIP_DEFENSIVE;
 		
-		int spawnMaster = bl1.masterShipSpawn();
+		int spawnMaster = gameLogic.masterShipSpawn();
 		drawMasterShip(spawnMaster);
-		int spawnEnemy = bl1.enemyShipSpawn();
-		int enemyType = bl1.getEnemyType();
+		int spawnEnemy = gameLogic.enemyShipSpawn();
+		int enemyType = gameLogic.getEnemyType();
 		drawSpawnedEnemies(spawnEnemy, enemyType);
 		enemyType = 0;				
+	}
+	
+	// display scores
+	private void updateScores() {
+		scoreAndHighScore.get(0).setText(Integer.toString(gameLogic.getScore()));
+		scoreAndHighScore.get(1).setText(Integer.toString(gameLogic.getHighScore()));
 	}
 } //  end GUI
