@@ -13,7 +13,7 @@ public class GameTile implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// each tile has an id from 1 to 16
-	int tileId;
+	private int tileId;
 	
 	// create hashMap where key = tileId and value = legal moves for that tile
 	private HashMap<Integer, ArrayList<Integer>> mapOfMoves = new HashMap<Integer, ArrayList<Integer>>();

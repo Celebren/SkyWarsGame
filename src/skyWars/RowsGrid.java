@@ -45,8 +45,10 @@ public class RowsGrid implements Serializable {
 	public HashMap<Integer, ArrayList<Integer>> getLegalMovesMap() {
 		for (int i = 0; i < ROWS_IN_GRID; i++) {			
 			for (int y = 0; y < TILES_IN_A_ROW; y++) {
+				
 				// take each map entry for each tile for each row
 				this.hashMapEntry = this.getGridOfRows().get(i).getRowOfTiles().get(y).getMapOfMoves();
+				
 				// extract key and value
 				for (HashMap.Entry<Integer, ArrayList<Integer>> entry : hashMapEntry.entrySet()) {
 					this.key = entry.getKey();

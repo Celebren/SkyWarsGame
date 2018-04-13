@@ -31,6 +31,7 @@ import javax.swing.JMenuItem;
 import java.awt.Font;
 
 public class GUI extends JFrame {
+
 	/**
 	 * 
 	 */
@@ -109,9 +110,8 @@ public class GUI extends JFrame {
 		    @Override
 		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 		    	try {
-					exitGame();
+					exitGame(0);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		    }
@@ -140,7 +140,6 @@ public class GUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					System.out.println("Saving master mode as " + gameLogic.getMasterMode());
 					saveLoadLogic.serializeGameLogicState(gameLogic);
 				} catch (IOException e1) {					
 					e1.printStackTrace();
@@ -170,6 +169,11 @@ public class GUI extends JFrame {
 					}
 					drawMasterShip();
 					drawMovedEnemies();
+					try {
+						gameLogic.setHighScore(saveLoadLogic.loadHighScore());
+					} catch (NumberFormatException | IOException e1) {
+						e1.printStackTrace();
+					}
 					updateScores();
 				}			
 			}
@@ -182,9 +186,8 @@ public class GUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					exitGame();
+					exitGame(0);
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}	
 			}
@@ -235,20 +238,11 @@ public class GUI extends JFrame {
 
 				// update scores
 				updateScores();
+				//scoreAndHighScore.get(1).setText(Integer.toString(gameLogic.getHighScore()));
 
 				// check for game over state
 				if (whoExploded == 1) {
-					final ImageIcon icon = new ImageIcon(GUI.class.getResource(EXPLOSION));
-					Object[] options = {"New Game","Quit Game"};
-
-					String output = "Master Space Ship destroyed!!!\n\nGAME OVER\n\nYour final score: " + gameLogic.getScore() + "\n\n";
-
-					int selection = JOptionPane.showOptionDialog(contentPane, output, "Game Over", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE, icon, options, options[0]);
-					if (selection == 0) {
-						resetButton(0);
-					} else {
-						System.exit(0);
-					}
+					gameOverDialog();
 				}
 				whoExploded = 0;
 			}
@@ -291,23 +285,26 @@ public class GUI extends JFrame {
 
 		int selection1 = JOptionPane.showOptionDialog(frame, "Welcome to Sky Wars Game", "Sky Wars Game", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE, ICON, options1, options1[0]);
 
-		if (selection1 == 0) {
-			frame.resetButton(0);
+		if (selection1 == 0) { // New Game
+			GUI.resetButton(0);
 		} else if (selection1 == 1){
 			File tmpDir = new File("SavedGame.txt");
 			if (!tmpDir.exists()) {
 				saveFileIsMissingDialog(frame);
-			} else {
-				frame.resetButton(1);
+			} else { // Load Game
+				GUI.resetButton(1);
 				gameLogic = saveLoadLogic.deserializeGameLogicState();
 				
 				if (gameLogic.getMasterMode() == 1) {
 					masterShipIcon = MASTER_SHIP_OFFENSIVE;
 				}
-				frame.drawMasterShip();
+				
+				GUI.drawMasterShip();
 				frame.drawMovedEnemies();
-			}
-		} else {
+				gameLogic.setHighScore(saveLoadLogic.loadHighScore());
+				GUI.updateScores();
+			} 
+		} else { // Quit Game
 			exitGame(frame);
 		}
 	}
@@ -321,31 +318,38 @@ public class GUI extends JFrame {
 		}
 	}
 	
+	// game over dialog
+	private static void gameOverDialog() {
+		final ImageIcon icon = new ImageIcon(GUI.class.getResource(EXPLOSION));
+		Object[] options = {"New Game","Quit Game"};
+
+		String output = "Master Space Ship destroyed!!!\n\nGAME OVER\n\nYour final score: " + gameLogic.getScore() + "\n\n";
+
+		int selection = JOptionPane.showOptionDialog(contentPane, output, "Game Over", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE, icon, options, options[0]);
+		if (selection == 0) {
+			resetButton(0);
+		} else {
+			try {
+				exitGame(1);
+			} catch (IOException e1) {							
+				e1.printStackTrace();
+			}
+		}	
+	}
 	
 
 	// reset tiles method
-	private void resetTiles() {
+	private static void resetTiles() {
 		gameLogic.setMasterShipTile(null);
 		gameLogic.setBattleStarTile(null);
 		gameLogic.setBattleCruiserTile(null);
 		gameLogic.setBattleShooterTile(null);
 
-		for (JLabel label : listOfTiles) {
-			label.setIcon(null);
-		}
-		for (JLabel label : listOfStarTiles) {
-			label.setIcon(null);
-		}
-		for (JLabel label : listOfCruiserTiles) {
-			label.setIcon(null);
-		}
-		for (JLabel label : listOfShooterTiles) {
-			label.setIcon(null);
-		}
+		clearTiles();
 	} // end reset tiles 
 
 	// clear tiles method without clearing the ships
-	private void clearTiles() {			
+	private static void clearTiles() {			
 		for (JLabel label : listOfTiles) {
 			label.setIcon(null);
 		}
@@ -361,7 +365,7 @@ public class GUI extends JFrame {
 	} // end clear tiles
 
 	// method for drawing master ship
-	private void drawMasterShip() {
+	private static void drawMasterShip() {
 
 		if (gameLogic.getMasterShipTile() != null) {
 			for (int i = 0; i < NUMBER_OF_TILES; i++) {
@@ -373,7 +377,7 @@ public class GUI extends JFrame {
 	} // end drawMasterShop()
 
 	// method for drawing enemy ships
-	private void drawSpawnedEnemies(int tileNumber, int enemyType) {
+	private static void drawSpawnedEnemies(int tileNumber, int enemyType) {
 		for (int i = 0; i < NUMBER_OF_TILES; i++) {
 			if (tileNumber-1 == i) {
 				switch (enemyType) {
@@ -434,7 +438,7 @@ public class GUI extends JFrame {
 		drawMasterShip();
 	}
 
-	private void resetButton(int gameHasBeenLoaded) {
+	private static void resetButton(int gameHasBeenLoaded) {
 		System.out.println("---------------------------------------------------\nreset clicked");
 
 		// reset score
@@ -445,6 +449,7 @@ public class GUI extends JFrame {
 		for (GameTile t : gameLogic.getListOfTiles()) {
 			t.getListOfShipsOnTile().clear();
 		}
+		
 		if (gameHasBeenLoaded == 0) {
 			gameLogic.setMasterMode(0);
 			masterShipIcon = MASTER_SHIP_DEFENSIVE;
@@ -459,22 +464,26 @@ public class GUI extends JFrame {
 			
 			enemyType = 0;
 		}
-	}
+	} // end resetbutton
 
 	// display scores
-	private void updateScores() {
+	private static void updateScores() {
 		scoreAndHighScore.get(0).setText(Integer.toString(gameLogic.getScore()));
+		
 		scoreAndHighScore.get(1).setText(Integer.toString(gameLogic.getHighScore()));
 	}
 	
-	// exit game provess
-	private static void exitGame() throws IOException {
+	// exit game
+	private static void exitGame(int gameOver) throws IOException {
 		if (JOptionPane.showConfirmDialog(contentPane, 
 				"Are you sure to quit?", "Sky Wars Game", 
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
 			saveLoadLogic.saveHighScore(gameLogic.getHighScore());
 			System.exit(0);
+		}
+		if  (gameOver == 1) {
+			gameOverDialog();
 		}
 		
 	}
@@ -485,6 +494,7 @@ public class GUI extends JFrame {
 				JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
 			
 			saveLoadLogic.saveHighScore(gameLogic.getHighScore());
+
 			System.exit(0);
 			
 		} else {
@@ -492,8 +502,7 @@ public class GUI extends JFrame {
 		}
 		
 	}
-	
-	
+		
 	private void createJLabelTiles(JPanel contentPane) {
 		Border border = LineBorder.createGrayLineBorder();
 		
@@ -1085,7 +1094,7 @@ public class GUI extends JFrame {
 		lblScoreValue.setFont(new Font("MS Gothic", Font.BOLD, 15));
 		lblScoreValue.setBounds(82, 61, 108, 39);
 		contentPane.add(lblScoreValue);
-
+		
 		scoreAndHighScore.add(lblScoreValue);
 
 		JLabel lblHighScoreValue = new JLabel("0");
@@ -1112,9 +1121,6 @@ public class GUI extends JFrame {
 			}
 		}
 		scoreAndHighScore.add(lblHighScoreValue);
-
-		
-
 
 	}
 } //  end GUI

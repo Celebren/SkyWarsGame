@@ -1,7 +1,7 @@
 package skyWars;
 
 public class MasterSpaceShip extends Ship {
-	
+
 	/**
 	 * 
 	 */
