@@ -77,6 +77,7 @@ public class GUI extends JFrame {
 
 	private static GameLogic gameLogic = new GameLogic();
 	private static SaveLoad saveLoadLogic = new SaveLoad();
+	private static Scores scores = new Scores();
 
 	/**
 	 * Launch the application.
@@ -118,6 +119,9 @@ public class GUI extends JFrame {
 		});
 		setBounds(100, 100, 800, 600);
 
+		// register Observers to list of observers
+		gameLogic.registerObserver(scores);
+		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
@@ -235,10 +239,13 @@ public class GUI extends JFrame {
 				if (whoExploded > 0) {							
 					displayExplosion(whoExploded);
 				}
-
-				// update scores
+				
+				// notify observers that the scores have been updated
+				gameLogic.notifyObservers();
+				
+				// update scores display
 				updateScores();
-				//scoreAndHighScore.get(1).setText(Integer.toString(gameLogic.getHighScore()));
+				
 
 				// check for game over state
 				if (whoExploded == 1) {

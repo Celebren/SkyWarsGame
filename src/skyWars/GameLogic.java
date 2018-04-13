@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 
-public class GameLogic implements Serializable {
+public class GameLogic implements Serializable, Observable {
 
 
 	/**
@@ -51,6 +51,8 @@ public class GameLogic implements Serializable {
 	private ArrayList<Integer> movesListForCruiser = new ArrayList<Integer>();
 	private ArrayList<Integer> movesListForShooter = new ArrayList<Integer>();
 
+	private ArrayList<Scores> scoresObservers = new ArrayList<Scores>();
+	
 	public GameLogic () {}
 
 
@@ -349,5 +351,25 @@ public class GameLogic implements Serializable {
 
 	public void setHighScore(int highScore) {
 		this.highScore = highScore;
+	}
+
+	@Override
+	public void registerObserver(Scores scores) {
+		scoresObservers.add(scores);		
+	}
+
+
+	@Override
+	public void removeObserver(Scores scores) {
+		scoresObservers.remove(scores);		
+	}
+
+
+	@Override
+	public void notifyObservers() {
+		for (Scores s : scoresObservers) {
+			s.update(getScore());
+		}
+		
 	}
 }
